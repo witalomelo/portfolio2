@@ -1,0 +1,158 @@
+/* importar fontes do google.fonts */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+
+/* variaveis globais */
+:root {
+    --cor-primaria: black;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+/* resertar configurações padrao */
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* height: 100vh; */
+    box-sizing: border-box; /*propriedade do box sizing que permite deixar o elemento filho sem passar da borda*/
+    background-color: var(--cor-primaria); /*fundo*/
+    color: var(--cor-secundaria); /* mudar cor da fonte */
+
+}
+.cabecalho{
+    padding: 2% 0% 0% 15% ;
+}
+
+.cabecalho_menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho_menu_link{
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+.apresentacao {
+    /* importante utilizar a propriedade box sizing para o filho não ultrapassar a borda */
+    padding: 5% 15%; /* espaço em torno do conteúdo de um elemento */
+    display: flex; /* propriedades do flex box */
+    justify-content: space-between;
+    align-items: center;
+    gap: 82px;
+    
+}
+
+/* elemento pai que tem filho o titulo, subtitulo e botoes */
+.apresentacao__conteudo{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 40px; /* utilizando para definir espaço entre elementos  */
+   
+}
+
+.apresentacao_conteudo_titulo {
+    font-family:  var(--fonte-primaria);
+    font-size: 2.25rem;
+}
+
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    
+ }
+
+.titulo-destaque:active{
+    color: red;
+}
+
+.apresentacao_conteudo_subtitulo{
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao_links_navegacao{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: 2px solid var(--cor-terciaria);
+    width: 50%;
+    text-align: center;
+    border-radius: 16px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* espaço entre o conteudo e as bordas dentro do botao */
+    padding: 21.5px 0px;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* estilização quando o mouse passar pelo botao */
+.links_links:hover {
+    background-color: var(--cor-hover);
+}
+
+.apresentacao_imagem {
+    /* largura utilizando unidade relativa para adaptação em outra telas */
+    width: 50%;
+}
+
+.rodape{
+    padding: 24px;
+    color:var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* media queris:
+quando a tela tiver um tamanho maximo/ minimo a tela tera aplicação de um estilo
+pre definido 
+podemos definir um media query diferente p/ celular, tablet e desktop
+é possivel definir intervalos utilizando o AND ex: @media (min-width: 480px ) and (max-width: 800px)
+*/
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 10%;
+    }  
+
+    .cabecalho_menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    
+    .apresentacao__conteudo {
+        width: auto;
+    }
+}
+
+
+
+
+
+
